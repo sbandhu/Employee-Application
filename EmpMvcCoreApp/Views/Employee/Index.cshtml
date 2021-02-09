@@ -1,10 +1,35 @@
 ﻿
 @{
     ViewData["Title"] = "Employee List";
-   
+
 }
 
 <h2>Employee List</h2>
 <p>Hello from our view template</p>
-<table> <tr>
-     <td>Emp Id</td><td>Employee Name</td></tr></table>
+@*<p>@ViewData["EmployeeResponse"]</p>*@
+
+<table>
+    <thead>
+        <tr>
+            <td>Emp Id</td>
+            <td>Employee Name</td>
+            <td>Employee Salary</td>
+            <td>Employee Age</td>
+        </tr>
+    </thead>
+    @if (ViewData["EmployeeList"] != null && ViewData["EmployeeList"] != "")
+    {
+        @foreach (var item in (List<Employee>)ViewData["EmployeeList"])
+        {
+            <tr>
+                <td>@item.id </td>
+                <td>@item.employee_name </td>
+                <td>@item.employee_salary </td>
+                <td>@item.employee_age </td>
+            </tr>
+        }
+    }
+    else { 
+    <tr><td colspan="4"> No Data Found</td></tr>
+    }
+</table>
