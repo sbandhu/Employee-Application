@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace EmpMvcCoreApp.Models
 {
-    public class EmployeeResponse
+    public class GenericResponse<T>
     {
         public string status { get; set; }
-        public Employee data { get; set; }
+        public T data { get; set; }
         public string message { get; set; }
     }
 }

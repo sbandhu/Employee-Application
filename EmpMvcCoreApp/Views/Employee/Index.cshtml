@@ -21,12 +21,13 @@
     {
         @foreach (var item in (List<Employee>)ViewData["EmployeeList"])
         {
-            <tr>
-                <td>@item.id </td>
-                <td>@item.employee_name </td>
-                <td>@item.employee_salary </td>
-                <td>@item.employee_age </td>
-            </tr>
+<tr>
+    <td>@item.id </td>
+    <td>@item.employee_name </td>
+    <td>@item.employee_salary </td>
+    <td>@item.employee_age </td>
+    <td><a href="/employee/details?empId=@item.id">Details</a></td>
+</tr>
         }
     }
     else { 
